@@ -125,9 +125,9 @@ function App() {
   return (
     <div className="app">
       <GameHeader score={score} moves={moves} />
-      {/* <button className="new-game-btn" onClick={initializeGame}>
+      <button className="new-game-btn" onClick={initializeGame}>
         New Game
-      </button> */}
+      </button>
       {score === CardValues.length / 2 && (
         <div className="win-message">
           <h2>🎉 Congratulations! 🎉</h2>

@@ -327,21 +327,7 @@ body {
   background-color: #4912c1;
 }
 
-.win-message {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #1e293b;
-  color: white;
-  padding: 35px;
-  border-radius: 16px;
-  text-align: center;
-  z-index: 1000;
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
-  width: 90%;
-  max-width: 400px;
-}
+
 
 .win-message h2 {
   margin-bottom: 10px;
