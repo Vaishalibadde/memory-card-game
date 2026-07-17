@@ -103,6 +103,9 @@ function App() {
   return (
     <div className="app">
       <GameHeader score={score} moves={moves} />
+      <button className="new-game-btn" onClick={initializeGame}>
+        New Game
+      </button>
 
       <div className="cards-grid">
         {cards.map((card) => (

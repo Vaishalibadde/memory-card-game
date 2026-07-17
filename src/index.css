@@ -248,3 +248,20 @@ body {
     font-size: 2.5rem;
   }
 } 
+
+.new-game-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.new-game-btn:hover {
+  background-color: #45a049;
+}
