@@ -129,23 +129,39 @@ body {
   color: #a1a1aa;
 }
 
-.cards-grid {
+/* .cards-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
   max-width: 600px;
   width: 100%;
+} */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.card {
+/* .card {
   aspect-ratio: 1;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+} */
+
+.card {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.card-front,
+/* .card-front,
 .card-back {
   position: absolute;
   width: 100%;
@@ -157,28 +173,63 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   backface-visibility: hidden;
   transition: opacity 0.3s, transform 0.3s;
+} */
+
+
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  backface-visibility: hidden;
+
+  transition: all 0.3s ease;
+
+  line-height: 1;
 }
 
-.card-front {
+/* .card-front {
   background: linear-gradient(to bottom, #0f172a, #0b0f1a);
   color: white;
   font-weight: bold;
   font-size: 3rem;
   z-index: 1;
   border: 2px solid rgba(255, 255, 255, 0.1);
+} */
+.card-front {
+  background: linear-gradient(to bottom, #0f172a, #0b0f1a);
+  color: white;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  border: 2px solid rgba(255,255,255,0.1);
+
+  opacity: 1;
+  z-index: 2;
 }
 
-.card-back {
+/* .card-back {
   background: #1e1e1e;
   font-size: 4rem;
   z-index: 0;
   border: 2px solid rgba(255, 255, 255, 0.1);
+} */
+
+.card-back {
+  background: #1e1e1e;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  border: 2px solid rgba(255,255,255,0.1);
+
+  opacity: 0;
+  z-index: 1;
 }
 
 .card.flipped .card-front {
   opacity: 0;
-  pointer-events: none;
-  transform: scale(0.9);
+
 }
 
 .card.flipped .card-back {
@@ -189,10 +240,15 @@ body {
   pointer-events: none;
 }
 
-.card.matched .card-back {
+/* .card.matched .card-back {
   background: rgba(126, 211, 33, 0.2);
   box-shadow: 0 0 20px rgba(126, 211, 33, 0.4);
   border: 2px solid rgba(126, 211, 33, 0.5);
+} */
+
+.card.matched .card-back {
+  background: rgba(126,211,33,0.2);
+  border: 2px solid rgba(126,211,33,0.5);
 }
 
 .card:hover:not(.matched):not(.flipped) .card-front {
@@ -204,50 +260,55 @@ body {
 }
 
 @media (max-width: 768px) {
-  .game-header h1 {
-    font-size: 2rem;
-  }
 
   .cards-grid {
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 500px;
+    gap: 12px;
   }
 
-  .card-front,
-  .card-back {
-    font-size: 2.5rem;
-  }
-
-  .card-back {
-    font-size: 3rem;
-  }
-
-  .stats {
-    gap: 20px;
-  }
-
-  .stat-value {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
   .game-header {
     padding: 20px;
   }
 
   .game-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .card-front,
-  .card-back {
     font-size: 2rem;
   }
 
-  .card-back {
-    font-size: 2.5rem;
+  .stat-value {
+    font-size: 1.5rem;
   }
-} 
+
+  .new-game-btn {
+    width: 220px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 500px;
+    gap: 12px;
+  }
+
+  .game-header {
+    padding: 20px;
+  }
+
+  .game-header h1 {
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .new-game-btn {
+    width: 220px;
+  }
+}
 
 .new-game-btn {
   margin: 20px auto;
