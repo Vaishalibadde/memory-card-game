@@ -254,7 +254,7 @@ body {
   display: block;
   padding: 12px 24px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #551a82 ;
   color: white;
   border: none;
   border-radius: 8px;
@@ -263,5 +263,5 @@ body {
 }
 
 .new-game-btn:hover {
-  background-color: #45a049;
+  background-color: #4912c1;
 }

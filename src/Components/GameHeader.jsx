@@ -3,13 +3,13 @@ export const GameHeader = ({score, moves})=>{
         <><div className="game-header">
             <h1>Memory Card Game</h1>
         </div><div className="stats">
-                <div className="state-items">
-                    <span className="state-lable">Score : </span>{}
-                     <span className="state-value"> {score}</span>
+                <div className="state-item">
+                    <span className="state-label">Score : </span>{}
+                     <span className="stat-value"> {score}</span>
                 </div>
-                <div className="state-items">
-                <span className="state-lable">Moves :</span>{}
-                     <span className="state-value"> {moves}</span>
+                <div className="state-item">
+                <span className="state-label">Moves :</span>{}
+                     <span className="stat-value"> {moves}</span>
                 </div>
             </div></>
     )
