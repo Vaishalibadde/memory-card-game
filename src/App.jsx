@@ -4,22 +4,44 @@ import { GameHeader } from "./Components/GameHeader";
 
 const CardValues = [
   { value: "🍎" },
-  { value: "🍌" },
   { value: "🍇" },
   { value: "🍊" },
   { value: "🍓" },
-  { value: "🥝" },
   { value: "🍑" },
   { value: "🍒" },
+  { value: "🍍" },
+  { value: "🍋" },
+  { value: "🍐" },
+  { value: "🥕" },
+  { value: "🌽" },
+  { value: "🥦" },
+  { value: "🍆" },
+  { value: "🥑" },
+  { value: "🍕" },
+  { value: "🍔" },
+  { value: "🍩" },
+  { value: "🍟" },
+      
   { value: "🍎" },
-  { value: "🍌" },
   { value: "🍇" },
   { value: "🍊" },
   { value: "🍓" },
-  { value: "🥝" },
   { value: "🍑" },
   { value: "🍒" },
+  { value: "🍍" },
+  { value: "🍋" },
+  { value: "🍐" },
+  { value: "🥕" },
+  { value: "🌽" },
+  { value: "🥦" },
+  { value: "🍆" },
+  { value: "🥑" },
+  { value: "🍕" },
+  { value: "🍔" },
+  { value: "🍩" },
+  { value: "🍟" },
 ];
+const totalPairs = CardValues.length / 2;
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -103,9 +125,22 @@ function App() {
   return (
     <div className="app">
       <GameHeader score={score} moves={moves} />
-      <button className="new-game-btn" onClick={initializeGame}>
+      {/* <button className="new-game-btn" onClick={initializeGame}>
         New Game
-      </button>
+      </button> */}
+      {score === CardValues.length / 2 && (
+        <div className="win-message">
+          <h2>🎉 Congratulations! 🎉</h2>
+          <p>You Won the Game!</p>
+
+          <button
+            className="new-game-btn"
+            onClick={initializeGame}
+          >
+            Play Again
+          </button>
+        </div>
+      )}
 
       <div className="cards-grid">
         {cards.map((card) => (
